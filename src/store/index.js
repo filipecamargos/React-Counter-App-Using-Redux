@@ -9,10 +9,18 @@ createSlice({
   name: "counter",
   initialState: initialstate,
   reducers: {
-    increment() {},
-    decrement() {},
-    increase() {},
-    toggleCounter() {},
+    increment(state) {
+      state.counter++;
+    },
+    decrement(state) {
+      state.counter--;
+    },
+    increase(state, action) {
+      state.counter += action.amount;
+    },
+    toggleCounter(state) {
+      state.showCounter = !state.showCounter;
+    },
   }
 });
 
