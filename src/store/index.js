@@ -1,7 +1,21 @@
 import { createStore } from "redux";
+import { createSlice } from "@reduxjs/toolkit";
 
 //inital state to manage
 const initialstate = { counter: 0, showCounter: true };
+
+//Prepare a Slice of the global state
+createSlice({
+  name: "counter",
+  initialState: initialstate,
+  reducers: {
+    increment() {},
+    decrement() {},
+    increase() {},
+    toggleCounter() {},
+  }
+});
+
 //Reducer function to be executed
 const counterReducer = (state = initialstate, action) => {
   switch (action.type) {
