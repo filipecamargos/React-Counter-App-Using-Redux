@@ -6,8 +6,8 @@ import classes from "./Counter.module.css";
 const Counter = () => {
   //Get access to the data manager in the store
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter);
-  const showCounter = useSelector(state => state.showCounter);
+  const counter = useSelector(state => state.counter.counter);
+  const showCounter = useSelector(state => state.counter.showCounter);
 
   //Handle increment btn
   const decrementHandler = () => {
