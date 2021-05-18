@@ -1,14 +1,19 @@
 import { Fragment } from "react";
+import { useSelector } from 'react-redux';
 
 import Header from "./components/Header";
 import Counter from "./components/Counter";
-import Auth from "./components/Auth"
+import Auth from "./components/Auth";
+import UserProfile from './components/UserProfile';
 
 function App() {
+  //Check if it's authenticated
+  const isAuth = useSelector(state => state.auth.isAuthenticated);
   return (
     <Fragment>
       <Header /> 
-      <Auth />
+      {!isAuth && <Auth />}
+      {isAuth && <UserProfile />}
       <Counter />
     </Fragment>
   );
